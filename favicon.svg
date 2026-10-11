@@ -1,0 +1,361 @@
+.student-workspace {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.workspace-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(17, 24, 39, 0.5);
+}
+
+.workspace-header h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.curriculum-badge {
+  display: inline-flex;
+  padding: 6px 12px;
+  background: rgba(125, 211, 252, 0.12);
+  border: 1px solid rgba(125, 211, 252, 0.24);
+  border-radius: 999px;
+  font-size: 12px;
+  color: #d7f5ff;
+}
+
+.workspace-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 0;
+  flex: 1;
+  overflow: hidden;
+}
+
+.topics-sidebar {
+  background: rgba(13, 17, 23, 0.8);
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 18px 16px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.topic-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: rgba(125, 211, 252, 0.12);
+  color: #d7f5ff;
+  font-size: 12px;
+}
+
+.topics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+}
+
+.topic-item {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--line);
+  background: rgba(17, 24, 39, 0.8);
+  color: var(--text);
+  border-radius: 14px;
+  padding: 12px;
+  text-align: left;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.topic-item:hover,
+.topic-item.selected {
+  border-color: rgba(125, 211, 252, 0.35);
+  transform: translateY(-1px);
+}
+
+.topic-item.in-progress {
+  background: rgba(125, 211, 252, 0.08);
+}
+
+.topic-item.review {
+  background: rgba(251, 191, 36, 0.08);
+}
+
+.topic-item.mastered {
+  background: rgba(34, 197, 94, 0.08);
+}
+
+.topic-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.topic-progress-bar {
+  height: 8px;
+  background: rgba(148, 163, 184, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--purple));
+}
+
+.topic-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.state-badge {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 4px 8px;
+  background: rgba(148, 163, 184, 0.08);
+  border: 1px solid var(--line);
+  color: var(--muted-strong);
+}
+
+.percent {
+  color: var(--muted-strong);
+  font-weight: 600;
+}
+
+.workspace-main {
+  overflow-y: auto;
+  padding: 18px;
+}
+
+.topic-workspace {
+  display: grid;
+  gap: 20px;
+}
+
+.topic-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  background: rgba(17, 24, 39, 0.58);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.topic-header h3 {
+  margin: 0 0 8px;
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
+}
+
+.topic-summary {
+  margin: 0;
+  color: var(--muted);
+  max-width: 620px;
+  line-height: 1.6;
+}
+
+.level-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(125, 211, 252, 0.3);
+  background: rgba(125, 211, 252, 0.12);
+  color: #d7f5ff;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.control-panel,
+.notes-section,
+.learning-actions {
+  background: rgba(17, 24, 39, 0.58);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.control-panel {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 18px;
+}
+
+.state-selector,
+.progress-slider {
+  display: grid;
+  gap: 8px;
+}
+
+.state-selector label,
+.progress-slider label {
+  color: var(--muted-strong);
+  font-size: 14px;
+}
+
+.state-selector select {
+  width: 100%;
+  background: rgba(15, 21, 28, 0.85);
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.progress-slider {
+  align-content: center;
+}
+
+.progress-slider input[type='range'] {
+  width: 100%;
+}
+
+.percent-display {
+  color: var(--muted-strong);
+  font-weight: 700;
+}
+
+.notes-section h4,
+.learning-actions h4 {
+  margin: 0 0 12px;
+}
+
+.note-input {
+  display: grid;
+  gap: 12px;
+}
+
+.note-input textarea {
+  width: 100%;
+  resize: vertical;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(15, 21, 28, 0.85);
+  color: var(--text);
+  padding: 12px 14px;
+}
+
+.save-note-btn {
+  justify-self: flex-start;
+  background: linear-gradient(135deg, var(--accent), var(--purple));
+  color: #0b0d12;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-weight: 700;
+}
+
+.notes-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.note-card {
+  border: 1px solid var(--line);
+  background: rgba(15, 21, 28, 0.7);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.note-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.note-type {
+  display: inline-flex;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(125, 211, 252, 0.12);
+  border: 1px solid rgba(125, 211, 252, 0.2);
+  color: #d7f5ff;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.note-date {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.note-content {
+  margin: 0;
+  color: var(--muted-strong);
+  line-height: 1.6;
+}
+
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.action-btn {
+  border: 1px solid var(--line);
+  background: rgba(17, 24, 39, 0.7);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 10px 14px;
+}
+
+.empty-state {
+  display: grid;
+  place-items: center;
+  min-height: 260px;
+  color: var(--muted);
+}
+
+.error-panel {
+  padding: 24px;
+  color: #fca5a5;
+}
+
+@media (max-width: 920px) {
+  .workspace-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .topics-sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .control-panel {
+    grid-template-columns: 1fr;
+  }
+}
